@@ -4,8 +4,8 @@ import com.github.pkg.utilities.primes.Primes;
 
 public class Main {
     public Main() {
-        final Solution solution = (Solution)new Question03();
-        System.out.println("Answer Is: " + solution.solve());
+        final Solution solution = (Solution)new Question04();
+        System.out.println("Answer is: " + solution.solve());
     }
 
     private void primeTest() {

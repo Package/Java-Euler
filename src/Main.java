@@ -1,10 +1,9 @@
 import com.github.pkg.questions.*;
 import com.github.pkg.solution.*;
-import com.github.pkg.utilities.primes.Primes;
 
 public class Main {
     public Main() {
-        final Solution solution = (Solution)new Question04();
+        final Solution solution = (Solution)new Question05();
         System.out.println("Answer is: " + solution.solve());
     }
 

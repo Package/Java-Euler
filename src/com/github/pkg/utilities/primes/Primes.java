@@ -1,5 +1,8 @@
 package com.github.pkg.utilities.primes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Primes {
 
     /**
@@ -28,5 +31,22 @@ public class Primes {
         }
 
         return true;
+    }
+
+    public static List<Long> generateAsList(int numberOfElements) {
+        List<Long> primes = new ArrayList<>();
+        primes.add(2L); // Edge case - only even prime
+
+        for (long number = 3; ; number += 2) {
+            if (primes.size() == numberOfElements) {
+                break;
+            }
+
+            if (isPrime(number)) {
+                primes.add(number);
+            }
+        }
+
+        return primes;
     }
 }

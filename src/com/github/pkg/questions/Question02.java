@@ -11,4 +11,9 @@ public class Question02 extends Solution<Integer> {
         final List<Integer> list = Fibonacci.until(4000000);
         return list.stream().filter(n -> n % 2 == 0).mapToInt(Integer::intValue).sum();
     }
+
+    @Override
+    public void test() {
+
+    }
 }

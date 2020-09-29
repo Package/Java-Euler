@@ -8,14 +8,6 @@ public class Main {
         System.out.println("Answer is: " + solution.solve());
     }
 
-    private void primeTest() {
-        System.out.println(Primes.isPrime(191)); // true
-        System.out.println(Primes.isPrime(2)); // true
-        System.out.println(Primes.isPrime(1)); // false
-        System.out.println(Primes.isPrime(200)); // false
-        System.out.println(Primes.isPrime(185)); // false
-    }
-
     public static void main(final String[] args) {
         new Main();
     }

@@ -17,4 +17,9 @@ public class Question01 extends Solution<Integer>
         final int streamSum = IntStream.range(0, 1000).filter(n -> n % 3 == 0 || n % 5 == 0).sum();
         return streamSum;
     }
+
+    @Override
+    public void test() {
+
+    }
 }

@@ -18,4 +18,15 @@ public class Question03 extends Solution<Integer> {
 
         return biggestDivisor;
     }
+
+    @Override
+    public void test() {
+        // Testing output of prime check
+
+        System.out.println(Primes.isPrime(191)); // true
+        System.out.println(Primes.isPrime(2)); // true
+        System.out.println(Primes.isPrime(1)); // false
+        System.out.println(Primes.isPrime(200)); // false
+        System.out.println(Primes.isPrime(185)); // false
+    }
 }

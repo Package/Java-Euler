@@ -19,4 +19,13 @@ public class Question04 extends Solution<Integer> {
 
         return largest;
     }
+
+    @Override
+    public void test() {
+        // Testing output of palindromic checker
+
+        System.out.println(Palindrome.isPalindromic("bob")); // true
+        System.out.println(Palindrome.isPalindromic("hadnndah")); // true
+        System.out.println(Palindrome.isPalindromic("hello")); // false
+    }
 }

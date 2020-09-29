@@ -8,7 +8,7 @@ public class Question05 extends Solution<Long> {
 
     @Override
     public Long solve() {
-        long target = 10;
+        long target = MAX_RANGE;
 
         while (true) {
             int divisor;

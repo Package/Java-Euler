@@ -25,4 +25,25 @@ public class FileReader {
 
         return builder.toString();
     }
+
+    public static int[][] readAsDimensionalArray(String filePath) {
+        try {
+            var content = Files.readAllLines(Paths.get(filePath));
+            var data = new int[content.size()][content.size()];
+
+            for (int row = 0; row < content.size(); row++) {
+                var rowContent = content.get(row).split(" ");
+
+                for (int col = 0; col < rowContent.length; col++) {
+                    data[row][col] = Integer.parseInt(rowContent[col]);
+                }
+            }
+
+            return data;
+        } catch (IOException e) {
+            System.out.println("Error reading input file: " + e.getMessage());
+        }
+
+        return null;
+    }
 }

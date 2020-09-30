@@ -1,9 +1,9 @@
 import com.github.pkg.questions.*;
-import com.github.pkg.solution.*;
 
 public class Main {
+
     public Main() {
-        final Solution solution = (Solution)new Question10();
+        var solution = new Question11();
         solution.test();
         System.out.println("Answer is: " + solution.solve());
     }

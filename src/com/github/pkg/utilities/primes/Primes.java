@@ -49,4 +49,23 @@ public class Primes {
 
         return primes;
     }
+
+    /**
+     * Generates a list of prime numbers until a given maximum range.
+     *
+     * @param maximumRange - stop generating primes larger than this number
+     * @return - the list of primes.
+     */
+    public static List<Long> generateUntil(int maximumRange) {
+        List<Long> primes = new ArrayList<>();
+        primes.add(2L);
+
+        for (long number = 3; number <= maximumRange; number += 2) {
+            if (isPrime(number)) {
+                primes.add(number);
+            }
+        }
+
+        return primes;
+    }
 }

@@ -1,9 +1,9 @@
 package com.github.pkg.utilities.files;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
+import java.nio.file.*;
+import java.util.List;
+import java.util.stream.*;
 
 public class FileReader {
 
@@ -24,6 +24,23 @@ public class FileReader {
         }
 
         return builder.toString();
+    }
+
+    /**
+     * Reads the provided input file, each line as a new entry in a list of returned lines.
+     *
+     * @param filePath - the path and file name of the file to read.
+     * @return - a list of strings containing each line in the file.
+     */
+    public static List<String> readAsStringList(String filePath) {
+        try {
+            Stream<String> lines = Files.lines(Paths.get(filePath));
+            return lines.collect(Collectors.toList());
+        } catch (IOException e) {
+            System.out.println("Error reading input file: " + e.getMessage());
+        }
+
+        return null;
     }
 
     public static int[][] readAsDimensionalArray(String filePath) {

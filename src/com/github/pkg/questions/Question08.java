@@ -2,6 +2,7 @@ package com.github.pkg.questions;
 
 import com.github.pkg.solution.Solution;
 import com.github.pkg.utilities.files.FileReader;
+import com.github.pkg.utilities.numbers.Numbers;
 
 public class Question08 extends Solution<Long> {
 
@@ -13,7 +14,7 @@ public class Question08 extends Solution<Long> {
 
         for (int index = 0; index < digits.length() - adjacentDigits; index++) {
             String current = digits.substring(index, index + adjacentDigits);
-            long currentProduct = multiplyDigits(current);
+            long currentProduct = Numbers.multiplyDigitsInString(current);
 
             if (currentProduct > bestProduct) {
                 bestProduct = currentProduct;
@@ -23,21 +24,7 @@ public class Question08 extends Solution<Long> {
         return bestProduct;
     }
 
-    /**
-     * Takes a string and multiples each character together returning the total. Note that this
-     * relies on the string only having valid numerical digits.
-     *
-     * e.g: <code>multiplyDigits("9989")</code>
-     * 9 × 9 × 8 × 9 = 5832
-     *
-     * @param digits - the string of digits to multiply
-     * @return - the total once all digits are multiplied
-     */
-    private long multiplyDigits(String digits) {
-        // A more Java8 and functional solution.
-        return digits.chars().asLongStream().reduce(1, (x, y) -> x * Math.abs('0' - y));
-    }
-
+    @Deprecated
     private long multiplyDigitsOriginal(String digits) {
         // A more classic approach, iterating each character summing up
 
@@ -54,7 +41,7 @@ public class Question08 extends Solution<Long> {
     public void test() {
         String content = FileReader.readAsString("resources/Input08.txt");
         System.out.println("Has file content: " + (content.length() > 0));
-        System.out.println("Java8 answer: " + (multiplyDigits("9989") == 5832));
+        System.out.println("Java8 answer: " + (Numbers.multiplyDigitsInString("9989") == 5832));
         System.out.println("Original answer: " + (multiplyDigitsOriginal("9989") == 5832));
     }
 }

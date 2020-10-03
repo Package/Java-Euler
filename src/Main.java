@@ -3,7 +3,7 @@ import com.github.pkg.questions.*;
 public class Main {
 
     public Main() {
-        var solution = new Question15();
+        var solution = new Question16();
         solution.test();
         System.out.println("Answer is: " + solution.solve());
     }
